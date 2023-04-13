@@ -1,3 +1,32 @@
+//animation des éléments à l'apparition à l'écran
+// sélectionnez tous les éléments de classe "detail"
+const competences = document.querySelectorAll('.competences .detail');
+const imagesGallerie = document.querySelectorAll('#acti .gallery img');
+
+// création d'une nouvelle instance de IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+    // pour chaque entrée qui est devenue visible
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // suppr de la classe "hidden" pour afficher l'élément
+            entry.target.classList.remove('hidden');
+
+            // ajout d'une classe "visible" pour déclencher l'animation
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.5 }); // seuil à 0,5 pour détecter lorsque l'élément est à moitié visible
+
+// ajoutde chaque élément à l'observateur
+competences.forEach((competence) => {
+    observer.observe(competence);
+});
+imagesGallerie.forEach((image) => {
+  observer.observe(image);
+});
+
+
+
 //slider
 const slide = [
     "images/Lettre-de-recommandation-Estelle-1.jpeg",
@@ -29,7 +58,10 @@ function zoomIn() {
   
   precedent.style.left = "calc(50% - 250px)";
   suivant.style.right = "calc(50% - 250px)";
+
+  images[current].style.cursor = "zoom-out";
 }
+
 
 function zoomOut() {
   images[current].style.transform = "scale(1)";
@@ -40,6 +72,8 @@ function zoomOut() {
   
   precedent.style.left = "0";
   suivant.style.right = "0";
+
+  images[current].style.cursor = "zoom-in";
 }
 
 for (var i = 0; i < images.length; i++) {

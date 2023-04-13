@@ -6,17 +6,26 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h1, h2, h3 {
+  font-family: "Dancing Script", cursive;
 }
 
 #container {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
   margin: 0 auto;
 }
 
 h2 {
   padding: 20px 0;
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
 }
 
 p {
@@ -61,7 +70,12 @@ nav li a {
   display: block;
   clear: both;
 }
-#presentation .nom {
+#presentation .estelle {
+  width: 70%;
+  max-width: 1440px;
+  margin: auto;
+}
+#presentation .estelle .nom {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -70,26 +84,40 @@ nav li a {
   margin: 0 15px 5px 0;
   position: relative;
 }
-#presentation .nom img {
+#presentation .estelle .nom img {
   height: 200px;
   width: 200px;
   object-fit: cover;
 }
-#presentation .nom h1 {
-  font-size: 24px;
+#presentation .estelle .nom h1 {
+  font-size: 36px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.competences {
+#presentation .competences {
   margin-top: 50px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.competences .detail {
+#presentation .competences .nomcomp {
+  position: relative;
+}
+#presentation .competences .nomcomp::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 3px;
+}
+#presentation .competences .detail {
   border: 5px solid rgba(255, 255, 255, 0.5);
   height: 300px;
   width: 300px;
@@ -102,39 +130,43 @@ nav li a {
   margin: 5px;
 }
 
-.nomcomp {
-  position: relative;
-}
-.nomcomp::after {
-  position: absolute;
-  display: inline-block;
-  content: "";
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 45px;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 3px;
+.detail {
+  display: none;
 }
 
+.detail.visible {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+@keyframes scale-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 #acti {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #21A0A0 85%, #FCFCFC);
+  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
+  color: #FCFCFC;
 }
-
-.gallery {
+#acti .zonetexte {
+  max-width: 1440px;
+  margin: auto;
+}
+#acti .zonetexte .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 2vmin;
   padding: 0 24px;
 }
-.gallery li {
+#acti .zonetexte .gallery li {
   list-style-type: none;
   height: 250px;
   flex-grow: 1;
 }
-.gallery li img {
+#acti .zonetexte .gallery li img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -142,10 +174,30 @@ nav li a {
   box-shadow: 5px 5px 5px 2px rgba(4, 104, 101, 0.75);
 }
 
+.gallery ul li img {
+  display: none;
+}
+
+#acti .gallery img.visible {
+  animation: scale-top 0.5s ease-out forwards;
+}
+
+@keyframes scale-top {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 #services {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #FCFCFC 85%, #21A0A0);
-  color: #21A0A0;
+  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
+  color: #FCFCFC;
+}
+#services .zonetexte {
+  max-width: 1440px;
+  margin: auto;
 }
 
 #slider {
@@ -162,6 +214,7 @@ nav li a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: zoom-in;
 }
 
 #precedent,
@@ -199,7 +252,12 @@ nav li a {
 
 #contact {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #21A0A0 60%, #046865);
+  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
+  color: #FCFCFC;
+}
+#contact .zonetexte {
+  max-width: 1440px;
+  margin: auto;
 }
 
 form {
@@ -228,6 +286,12 @@ input:focus, textarea:focus {
   background: rgba(255, 255, 255, 0.5);
 }
 
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Dancing Script", cursive;
+  font-size: 16px;
+}
+
 button {
   background-color: #046865;
   color: white;
@@ -236,7 +300,9 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin: 10px 80px 25px 80px;
-  transition: color 1s ease-in-out, background-color 1s ease-in-out, font-weight 1s ease-in-out;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out, font-weight 1s ease-in-out;
+  font-family: "Dancing Script", cursive;
+  font-size: 20px;
 }
 button:hover {
   background-color: rgba(255, 255, 255, 0.5);

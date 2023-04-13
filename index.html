@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;700&family=Josefin+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <title>Estelle, garde d'enfants</title>
 </head>
 <body>
@@ -29,75 +32,79 @@
             </div>
             <div class="competences">
                 <div class="detail">
-                    <h3 class="nomcomp">Compétence 1</h3>
+                    <h3 class="nomcomp">Qualité 1</h3>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero delectus consectetur alias ipsa error impedit placeat quo, aut autem recusandae.</p>
                 </div>
                 <div class="detail">
-                    <h3 class="nomcomp">Compétence 2</h3>
+                    <h3 class="nomcomp">Qualité 2</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque blanditiis ab sit quos qui. Perferendis, commodi itaque? Quam, est mollitia!</p>
                 </div>
                 <div class="detail">
-                    <h3 class="nomcomp">Compétence 3</h3>
+                    <h3 class="nomcomp">Qualité 3</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis voluptatem veritatis esse aliquid excepturi cum quam atque aspernatur fuga voluptas.</p>
                 </div>
             </div>
         </section>
 
         <section id="acti">
-            <h2>Activités</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium blanditiis placeat, expedita quasi eius dolores!</p>
-            <ul class="gallery">
-                <li><img src="images/1629128144725.jpg" alt=""></li>
-                <li><img src="images/IMG_20180713_170536.jpg" alt=""></li>
-                <li> <img src="images/IMG_20190802_190312.jpg" alt=""></li>
-                <li><img src="images/IMG_20190918_095712.jpg" alt=""></li>
-                <li><img src="images/IMG_20200410_170856.jpg" alt=""></li>
-                <li><img src="images/IMG_20200410_170901.jpg" alt=""></li>
-                <li><img src="images/IMG_20200916_164454.jpg" alt=""></li>
-                <li><img src="images/IMG_20201007_121639.jpg" alt=""></li>
-                <li><img src="images/IMG_20210215_171606.jpg" alt=""></li>
-                <li><img src="images/PXL_20220617_154258339.jpg" alt=""></li>
-                <li><img src="images/IMG_20210824_121525.jpg" alt=""></li>
-            </ul>
+            <div class="zonetexte">
+                <h2>Activités</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium blanditiis placeat, expedita quasi eius dolores!</p>
+                <ul class="gallery">
+                    <li><img src="images/1629128144725.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20180713_170536.jpg" alt="" class="hidden"></li>
+                    <li> <img src="images/IMG_20190802_190312.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20190918_095712.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20200410_170856.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20200410_170901.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20200916_164454.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20201007_121639.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20210215_171606.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/PXL_20220617_154258339.jpg" alt="" class="hidden"></li>
+                    <li><img src="images/IMG_20210824_121525.jpg" alt="" class="hidden"></li>
+                </ul>
+
+            </div>
         </section>
 
         <section id="services">
-            <h2>Prestations et tarifs</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facere voluptatem! Nostrum iusto veritatis sapiente commodi quis fuga tempore rerum provident eos, error fugiat? Earum voluptate sunt error excepturi reprehenderit?</p>
+            <div class="zonetexte">
+                <h2>Prestations et tarifs</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, facere voluptatem! Nostrum iusto veritatis sapiente commodi quis fuga tempore rerum provident eos, error fugiat? Earum voluptate sunt error excepturi reprehenderit?</p>
 
-            <h3>Tarifs</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, distinctio? Similique, maiores nobis quae veritatis obcaecati magni consectetur aliquid, reprehenderit laboriosam doloremque soluta in ad ab. Enim eaque minus rerum?</p>
+                <h3>Tarifs</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, distinctio? Similique, maiores nobis quae veritatis obcaecati magni consectetur aliquid, reprehenderit laboriosam doloremque soluta in ad ab. Enim eaque minus rerum?</p>
 
-            <h3>Témoignages</h3>
-            <div id="slider">
-              <img src="images/Lettre-de-recommandation-Estelle-1.jpeg" alt="lettres de recommandation" id="slide">
-              <div id="precedent" onclick="ChangeSlide(-1)"><</div>
-              <div id="suivant" onclick="ChangeSlide(1)">></div>
-            </div>
-              
-                  
+                <h3>Témoignages</h3>
+                <div id="slider">
+                    <img src="images/Lettre-de-recommandation-Estelle-1.jpeg" alt="lettres de recommandation" id="slide">
+                    <div id="precedent" onclick="ChangeSlide(-1)"><</div>
+                    <div id="suivant" onclick="ChangeSlide(1)">></div>
+                </div>
+            </div>          
         </section>
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nesciunt dolor odit dolores corrupti quis.</p>
-            <form method="POST" id="form">
+            <div class="zonetexte">
+                <h2>Contact</h2>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis nesciunt dolor odit dolores corrupti quis.</p>
+                <form method="POST" id="form">
 
-                <input type="hidden" name="access_key" value="23090463-3f01-4ec7-b645-2bbdc66b0b19">
-                <input type="hidden" name="subject" value="New Submission from Web3Forms">
-                <input type="checkbox" name="botcheck" id="" style="display: none;">
-            
-                <!-- Custom Form Data -->
-                <input type="email" name="email" placeholder="Email" required>
-                <input type="text" name="name" placeholder="Nom" required>
-                <textarea name="message" placeholder="Votre message" required></textarea>
-            
-                <button type="submit">Submit</button>
-            
-                <div id="result"></div>
-            
-            </form>
-              
+                    <input type="hidden" name="access_key" value="23090463-3f01-4ec7-b645-2bbdc66b0b19">
+                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                    <input type="checkbox" name="botcheck" id="" style="display: none;">
+                
+                    <!-- Custom Form Data -->
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="text" name="name" placeholder="Nom" required>
+                    <input id=codepostal name=codepostal placeholder="Code postal" required>
+                    <textarea name="message" placeholder="Votre message" required></textarea>
+                
+                    <button type="submit">Envoyer</button>
+                
+                    <div id="result"></div>
+                </form>
+            </div>      
         </section>
     </div>
 <script src="./main.js"></script>
