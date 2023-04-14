@@ -86,6 +86,24 @@ for (var i = 0; i < images.length; i++) {
   });
 }
 
+precedent.addEventListener("click", function (event) {
+  event.stopPropagation(); // empêche la propagation de l'événement
+  ChangeSlide(-1);
+});
+
+suivant.addEventListener("click", function (event) {
+  event.stopPropagation(); // empêche la propagation de l'événement
+  ChangeSlide(1);
+});
+
+document.addEventListener("click", function (event) {
+  // vérifie si l'élément cliqué est l'image actuellement zoomée ou l'un de ses éléments enfants
+  if (event.target !== images[current] && !images[current].contains(event.target)) {
+    zoomOut();
+  }
+});
+
+
 //opacité des flèches
 const slider = document.querySelector("#slider");
 const nav = document.querySelector("#nav");

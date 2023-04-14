@@ -13,6 +13,10 @@ h1, h2, h3 {
   font-family: "Dancing Script", cursive;
 }
 
+p {
+  font-weight: 300;
+}
+
 #container {
   display: flex;
   flex-direction: column;
@@ -33,7 +37,7 @@ p {
 }
 
 nav {
-  background: linear-gradient(to bottom, #046865 80%, #034f4d);
+  background: linear-gradient(to bottom, #034f4d 75%, #011e1d);
   top: 0;
   left: 0;
   right: 0;
@@ -148,7 +152,7 @@ nav li a {
 }
 #acti {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
+  background: linear-gradient(to bottom, #21A0A0 15%, #FCFCFC);
   color: #FCFCFC;
 }
 #acti .zonetexte {
@@ -192,8 +196,8 @@ nav li a {
 }
 #services {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
-  color: #FCFCFC;
+  background: linear-gradient(to bottom, #FCFCFC 85%, #21A0A0);
+  color: #034f4d;
 }
 #services .zonetexte {
   max-width: 1440px;
@@ -215,6 +219,7 @@ nav li a {
   height: 100%;
   object-fit: cover;
   cursor: zoom-in;
+  box-shadow: 5px 5px 5px 2px rgba(4, 104, 101, 0.75);
 }
 
 #precedent,
@@ -252,7 +257,7 @@ nav li a {
 
 #contact {
   padding: 48px 15px;
-  background: linear-gradient(to bottom, #046865 85%, #21A0A0);
+  background: linear-gradient(to bottom, #21A0A0 85%, #046865);
   color: #FCFCFC;
 }
 #contact .zonetexte {
@@ -287,7 +292,7 @@ input:focus, textarea:focus {
 }
 
 input::placeholder, textarea::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: #FCFCFC;
   font-family: "Dancing Script", cursive;
   font-size: 16px;
 }
@@ -308,6 +313,13 @@ button:hover {
   background-color: rgba(255, 255, 255, 0.5);
   color: #046865;
   font-weight: bold;
+}
+
+footer {
+  background: linear-gradient(to bottom, #046865 75%, #011e1d);
+  text-align: center;
+  padding: 15px 0 5px 0;
+  color: #FCFCFC;
 }
 
 /*# sourceMappingURL=style.css.map */
