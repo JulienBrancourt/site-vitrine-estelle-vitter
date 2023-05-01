@@ -44,7 +44,7 @@ nav {
   position: fixed;
   width: 100%;
   margin: 0 auto;
-  padding: 15px 0;
+  padding: 15px 10px;
   display: flex;
   justify-content: center;
   z-index: 1;
@@ -92,6 +92,7 @@ nav li a {
   height: 200px;
   width: 200px;
   object-fit: cover;
+  border-radius: 50%;
 }
 #presentation .estelle .nom h1 {
   font-size: 36px;
@@ -194,6 +195,49 @@ nav li a {
     transform: scale(1);
   }
 }
+.carousel {
+  padding: 20px;
+  perspective: 500px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.carousel > * {
+  flex: 0 0 auto;
+}
+.carousel figure {
+  margin: 0;
+  width: 40%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+.carousel figure img {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0px;
+}
+.carousel figure img:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.carousel .test1 {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+.carousel .test1 button {
+  flex: 0 0 auto;
+  margin: 0 5px;
+  cursor: pointer;
+  color: #333;
+  background: none;
+  border: 1px solid;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+}
+
 #services {
   padding: 48px 15px;
   background: linear-gradient(to bottom, #FCFCFC 85%, #21A0A0);
