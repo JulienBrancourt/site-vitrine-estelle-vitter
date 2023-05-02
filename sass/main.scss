@@ -230,6 +230,8 @@ nav {
 		
 		img {
 			width: 100%;
+      height: 100%;
+      object-fit: contain;
 			box-sizing: border-box;
 			padding: 0 $item-separation / 2;
 			
@@ -249,14 +251,21 @@ nav {
 		button {
 			flex: 0 0 auto;
 			margin: 0 5px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 25px;
+      font-weight: bold;
+
 			
 			cursor: pointer;
 			
-			color: #333;
-			background: none;
-			border: 1px solid;
-			letter-spacing: 1px;
+			background-color: $couleur-primaire;
+      color: white;
+      border-radius: 50%;
 			padding: 5px 10px;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: $couleur-primaire;
+      }
 		}
 	}
 	
@@ -392,4 +401,3 @@ footer {
   padding: 15px 0 5px 0;
   color: $couleur-tertiaire;
 }
-
