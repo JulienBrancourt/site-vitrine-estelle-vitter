@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./mixins";
 
 *, ::before, ::after {
     box-sizing: border-box;
@@ -70,6 +71,9 @@ nav {
   padding: 50px 150px;
   background: linear-gradient(to bottom, $couleur-primaire 85%, $couleur-secondaire);
   color: $couleur-tertiaire;
+  @include responsive('tablette') {
+    padding: 50px;
+  }
   
 
     &::after {
@@ -81,6 +85,11 @@ nav {
       width: 70%;
       max-width: 1440px;
       margin: auto;
+      @include responsive('tablette') {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+      }
       .nom {
         height: 200px;
         width: 200px;
@@ -90,6 +99,10 @@ nav {
         shape-outside: margin-box;
         margin: 0 15px 5px 0;
         position: relative;
+        @include responsive('tablette') {
+          margin: 0 auto;
+        }
+
         img {
           height: 200px;
           width: 200px;
@@ -102,6 +115,9 @@ nav {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          @include responsive('tablette') {
+            text-align: center;
+          }
         }
       }    
     }
@@ -110,22 +126,8 @@ nav {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      .nomcomp {
-        position: relative;
-        &::after {
-          position: absolute;
-          display: inline-block;
-          content: "";
-          top: 35px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 45px;
-          height: 5px;
-          background: rgba(255, 255, 255, 0.5);
-          border-radius: 3px;
-        }
-      }
-       .detail {
+
+      .detail {
         border: 5px solid rgba(255, 255, 255, 0.5);
         height: 300px;
         width: 300px;
@@ -136,25 +138,43 @@ nav {
         align-items: center;
         padding: 35px;
         margin: 5px;
+        opacity: 0;
+        transform: translateY(40px);
+        animation: fadeIn 1s ease-out forwards;
+
+       @include responsive('mobile') {
+        height: 250px;
+        width: 250px;
+      }
+        
+       .nomcomp {
+         position: relative;
+         &::after {
+           position: absolute;
+           display: inline-block;
+           content: "";
+           top: 35px;
+           left: 50%;
+           transform: translateX(-50%);
+           width: 45px;
+           height: 5px;
+           background: rgba(255, 255, 255, 0.5);
+           border-radius: 3px;
+         }
+     }
       }
     }
 }
 
 //animation
-.detail {
-  display: none;
-}
-
-.detail.visible {
-  animation: scale-in 0.5s ease-out forwards;
-}
-
-@keyframes scale-in {
+@keyframes fadeIn {
   from {
-      transform: scaleX(0);
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
-      transform: scale(1);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -190,7 +210,10 @@ nav {
   transition: background .4s ease-in;
   margin: 0 auto;
   padding: 10px;
-  // position: relative;
+
+  @include responsive('mobile') {
+    margin-bottom: -45px;
+  }
 
   input[type=radio] {
     display: none;
@@ -202,6 +225,9 @@ nav {
     position: relative;
     width: 100%;
     height: 400px;
+    @include responsive('mobile') {
+      height: 250px;
+    }
     
     .card {
       position: absolute;

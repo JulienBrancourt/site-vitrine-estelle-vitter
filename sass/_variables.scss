@@ -5,3 +5,8 @@ $couleur-tertiaire : #FCFCFC;
 $item-width: 40%; // Now we can use percentages!
 $item-separation: 0px; // This now is set with Js
 $viewer-distance: 500px;
+
+$breakpoints: (
+    'tablette': ( max-width: 830px),
+    'mobile': ( max-width: 425px),
+);

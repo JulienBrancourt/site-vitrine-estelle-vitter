@@ -51,17 +51,25 @@ let precedent = document.querySelector("#precedent");
 let suivant = document.querySelector("#suivant");
 
 function zoomIn() {
-  images[current].style.transform = "scale(2)";
+  if (window.innerWidth < 550) {
+    images[current].style.transform = "scale(1.5)";
+    precedent.style.left = "calc(50% - 190px)";
+    suivant.style.right = "calc(50% - 190px)";
+  } else {
+    images[current].style.transform = "scale(2)";
+    precedent.style.left = "calc(50% - 250px)";
+    suivant.style.right = "calc(50% - 250px)";
+  }
+  
   images[current].style.transition = "transform 0.5s";
   
   precedent.classList.add("zoomed-in");
   suivant.classList.add("zoomed-in");
-  
-  precedent.style.left = "calc(50% - 250px)";
-  suivant.style.right = "calc(50% - 250px)";
 
   images[current].style.cursor = "zoom-out";
 }
+
+
 
 
 function zoomOut() {
@@ -79,13 +87,15 @@ function zoomOut() {
 
 for (var i = 0; i < images.length; i++) {
   images[i].addEventListener("click", function () {
-    if (images[current].style.transform === "scale(2)") {
+    var currentTransform = images[current].style.transform;
+    if (currentTransform === "scale(2)" || currentTransform === "scale(1.5)") {
       zoomOut();
     } else {
       zoomIn();
     }
   });
 }
+
 
 precedent.addEventListener("click", function (event) {
   event.stopPropagation(); // empêche la propagation de l'événement
