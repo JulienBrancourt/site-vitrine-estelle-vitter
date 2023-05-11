@@ -1,30 +1,31 @@
 
-//animation des éléments à l'apparition à l'écran
-// sélectionnez tous les éléments de classe "detail"
+//----------Animation des éléments à l'apparition à l'écran----------//
+// Sélection des éléments à animer
 const competences = document.querySelectorAll('.competences .detail');
-const imagesGallerie = document.querySelectorAll('#acti .gallery img');
+const logo = document.querySelector('.logo'); 
+const formulaire = document.querySelector('form'); 
 
-// création d'une nouvelle instance de IntersectionObserver
+// Création d'une nouvelle instance de IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
-    // pour chaque entrée qui est devenue visible
+    // Pour chaque entrée qui est devenue visible
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // suppr de la classe "hidden" pour afficher l'élément
+            // Suppression de la classe "hidden" pour afficher l'élément
             entry.target.classList.remove('hidden');
 
-            // ajout d'une classe "visible" pour déclencher l'animation
-            entry.target.classList.add('visible');
+            // Ajout de la classe "animate" pour déclencher l'animation
+            entry.target.classList.add('animate');
         }
     });
-}, { threshold: 0.5 }); // seuil à 0,5 pour détecter lorsque l'élément est à moitié visible
+}, { threshold: 0.5 }); // Seuil à 0.5 pour détecter lorsque l'élément est à moitié visible
 
-// ajoutde chaque élément à l'observateur
+// Ajout de chaque élément à l'observateur
 competences.forEach((competence) => {
     observer.observe(competence);
 });
-imagesGallerie.forEach((image) => {
-  observer.observe(image);
-});
+observer.observe(logo);
+observer.observe(formulaire);
+
 
 
 
@@ -134,7 +135,7 @@ slider.addEventListener("mouseleave", function () {
 
  
 
-//formulaire de contact
+//----------formulaire de contact----------//
 const form = document.getElementById('form');
 const result = document.getElementById('result');
 
@@ -173,4 +174,8 @@ form.addEventListener('submit', function(e) {
             }, 3000);
         });
 });
+
+
+
+
 

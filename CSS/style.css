@@ -105,13 +105,15 @@ nav li a {
     margin: 0 auto;
   }
 }
-#presentation .estelle .nom img {
+#presentation .estelle .nom .logo {
   height: 200px;
   width: 200px;
   object-fit: cover;
   border-radius: 50%;
   opacity: 0;
   transform: translatex(100%);
+}
+#presentation .estelle .nom .logo.animate {
   animation: apparition 1.5s ease-out forwards;
 }
 #presentation .estelle .nom h1 {
@@ -145,6 +147,8 @@ nav li a {
   margin: 5px;
   opacity: 0;
   transform: translateY(40px);
+}
+#presentation .competences .detail.animate {
   animation: bounceIn 1s ease-out 0.5s forwards;
 }
 @media (max-width: 425px) {
@@ -427,6 +431,8 @@ form {
   border-radius: 10px;
   opacity: 0;
   transform: translateY(40px);
+}
+form.animate {
   animation: bounceIn 1s ease-out forwards;
 }
 
