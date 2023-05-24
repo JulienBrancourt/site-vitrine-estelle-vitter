@@ -63,6 +63,12 @@ nav {
         a {
           text-decoration: none;
           color: $couleur-tertiaire;
+          outline: solid 0px $couleur-secondaire; 
+          border-radius: 10%;
+          &:hover {
+            outline: solid 15px rgba(9, 9, 9, 0);
+            transition: .5s;
+          }
         }
       }
 }
