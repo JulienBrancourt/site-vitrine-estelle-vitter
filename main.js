@@ -179,14 +179,13 @@ form.addEventListener('submit', function(e) {
 
 // tableau des dispo
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.table-responsive').forEach(function (table) {
-    let labels = Array.from(table.querySelectorAll('th')).map(function (th) {
-        return th.innerText
-    })
-    table.querySelectorAll('td').forEach(function (td, i) {
-        td.setAttribute('data-label', labels[i % labels.length])
-    })
+
+document.querySelectorAll('.table-responsive').forEach(function (table) {
+  let labels = Array.from(table.querySelectorAll('th')).map(function (th) {
+      return th.innerText
+  })
+  table.querySelectorAll('td').forEach(function (td, i) {
+      td.setAttribute('data-label', labels[i % labels.length])
   })
 })
 
