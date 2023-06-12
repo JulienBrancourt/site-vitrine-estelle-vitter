@@ -373,6 +373,74 @@ nav {
   }
 }
 
+table {
+  width: 90%;
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: solid 1px $couleur-secondaire;
+}
+
+th {
+  background-color: $couleur-primaire;
+  color: $couleur-tertiaire;
+}
+
+tr:nth-child(even) {
+  background-color: lighten($couleur-secondaire,5%);;
+}
+
+@media screen and (max-width: 700px) {
+  .table-responsive table,
+  .table-responsive thead, 
+  .table-responsive tbody, 
+  .table-responsive tr, 
+  .table-responsive th, 
+  .table-responsive td {
+    display: block;
+    text-align: center;
+  }
+
+  .table-responsive thead {
+    display: none;
+  }
+
+  .table-responsive td {
+    padding-left: 150px;
+    position: relative;
+    margin-top: -1px;
+    
+  }
+
+  .table-responsive td:nth-child(even) {
+    background-color: $couleur-secondaire;
+  }
+
+  .table-responsive td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    background-color: $couleur-primaire;
+    color: $couleur-tertiaire;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-weight: bold;
+  }
+
+  .table-responsive tr {
+    margin-bottom: 1rem;
+    background: transparent;
+  }
+}
+
 //slider
 #slider {
   position: relative;

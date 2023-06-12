@@ -7,24 +7,26 @@ const formulaire = document.querySelector('form');
 
 // Création d'une nouvelle instance de IntersectionObserver
 const observer = new IntersectionObserver((entries) => {
-    // Pour chaque entrée qui est devenue visible
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Suppression de la classe "hidden" pour afficher l'élément
-            entry.target.classList.remove('hidden');
+  // Pour chaque entrée qui est devenue visible
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+        // Suppression de la classe "hidden" pour afficher l'élément
+        entry.target.classList.remove('hidden');
 
-            // Ajout de la classe "animate" pour déclencher l'animation
-            entry.target.classList.add('animate');
-        }
-    });
+        // Ajout de la classe "animate" pour déclencher l'animation
+        entry.target.classList.add('animate');
+    }
+  });
 }, { threshold: 0.5 }); // Seuil à 0.5 pour détecter lorsque l'élément est à moitié visible
 
 // Ajout de chaque élément à l'observateur
 competences.forEach((competence) => {
-    observer.observe(competence);
+  observer.observe(competence)
+  
 });
 observer.observe(logo);
 observer.observe(formulaire);
+
 
 
 
@@ -174,6 +176,19 @@ form.addEventListener('submit', function(e) {
             }, 3000);
         });
 });
+
+// tableau des dispo
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.table-responsive').forEach(function (table) {
+    let labels = Array.from(table.querySelectorAll('th')).map(function (th) {
+        return th.innerText
+    })
+    table.querySelectorAll('td').forEach(function (td, i) {
+        td.setAttribute('data-label', labels[i % labels.length])
+    })
+  })
+})
 
 
 
