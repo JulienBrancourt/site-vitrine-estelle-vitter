@@ -381,10 +381,6 @@ th {
   color: #FCFCFC;
 }
 
-tr:nth-child(even) {
-  background-color: #25b5b5;
-}
-
 @media screen and (max-width: 700px) {
   .table-responsive table,
   .table-responsive thead,
@@ -395,6 +391,9 @@ tr:nth-child(even) {
     display: block;
     text-align: center;
   }
+  .table-responsive {
+    width: 75%;
+  }
   .table-responsive thead {
     display: none;
   }
@@ -402,9 +401,6 @@ tr:nth-child(even) {
     padding-left: 150px;
     position: relative;
     margin-top: -1px;
-  }
-  .table-responsive td:nth-child(even) {
-    background-color: #21A0A0;
   }
   .table-responsive td::before {
     content: attr(data-label);

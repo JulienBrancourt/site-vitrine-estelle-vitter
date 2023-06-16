@@ -177,9 +177,9 @@ form.addEventListener('submit', function(e) {
         });
 });
 
-// tableau des dispo
+// --------------------------tableau des dispo
 
-
+//attribution d'un data-label
 document.querySelectorAll('.table-responsive').forEach(function (table) {
   let labels = Array.from(table.querySelectorAll('th')).map(function (th) {
       return th.innerText
@@ -188,6 +188,21 @@ document.querySelectorAll('.table-responsive').forEach(function (table) {
       td.setAttribute('data-label', labels[i % labels.length])
   })
 })
+
+// coloration des cellules
+let cells = document.querySelectorAll('.table-responsive tbody td');
+cells.forEach(cell => {
+  if (cell.textContent === '✔') {
+    // cell.style.backgroundColor = '#F1F1F1';
+    cell.style.color = '#046865';
+  } else if (cell.textContent === '✘'){
+    cell.style.backgroundColor = '#21A0A0';
+    cell.style.color = '#FF0000';
+  }
+});
+
+
+
 
 
 
